@@ -11,7 +11,8 @@ runs:
     - name: copy shellkit into a standard path on the github runners
       run: |
         mkdir -p /opt/shellkit
-        cp -r "${{ github.action_path }}/*" /opt/shellkit/
+        ls -la ${{ github.action_path }}
+        cp -r ${{ github.action_path }}/* /opt/shellkit/
         ls -la /opt/shellkit/
       shell: bash
 

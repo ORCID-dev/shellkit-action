@@ -15,6 +15,15 @@ sk-github-actionlint(){
   done
 }
 
+# configure git on a github runner
+sk-github-runner-setup(){
+  if printenv GITHUB_REF_NAME;then
+    git config --global user.email "actions@github.com"
+    git config --global user.name "github actions"
+    repository_url="https://github.com/$GITHUB_REPOSITORY"
+  fi
+}
+
 sk-gitflow-conf(){
   if [[ -f ".gitflow" ]];then
     source .gitflow

@@ -9,7 +9,7 @@ runs:
       shell: bash
 
     - name: asdf cache
-      uses: actions/cache@v2
+      uses: actions/cache@v3
       with:
         path: ~/.asdf
         key: ${{ runner.os }}|${{ hashFiles('**/.tool-versions') }}
